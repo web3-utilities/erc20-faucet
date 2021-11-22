@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract Token is ERC20, AccessControl {
     uint8 private _decimals;
+
     bytes32 public MINTER_ROLE = "MINTER_ROLE";
     bytes32 public BURNER_ROLE = "BURNER_ROLE";
 
@@ -17,8 +18,8 @@ contract Token is ERC20, AccessControl {
         _setupRole(BURNER_ROLE, msg.sender);
     }
 
-    function decimals() public pure override returns (uint8) {
-        return 18;
+    function decimals() public view override returns (uint8) {
+        return _decimals;
     }
 
     function mint(address to, uint amount) public onlyMinter returns (bool) {

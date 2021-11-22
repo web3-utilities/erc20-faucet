@@ -6,3 +6,4 @@ artifacts
 
 .idea
 secret.json
+.DS_Store
