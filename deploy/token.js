@@ -6,12 +6,12 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
 
     console.log(`${deployer} in ${network.name}`)
 
-    const name = 'FTB';
+    const name = 'USDT';
     await deploy(name, {
         contract: 'Token',
         from: deployer,
         log: true,
-        args: ['Faucet ERC20 Token', name, 18]
+        args: ['Tether USD', name, 6]
     })
 }
 
