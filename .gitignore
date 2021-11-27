@@ -5,4 +5,5 @@ cache
 artifacts
 
 .idea
+secret.json
 .DS_Store
